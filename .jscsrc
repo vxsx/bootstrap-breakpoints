@@ -1,0 +1,6 @@
+{
+    "preset": "crockford",
+    "esnext": true,
+    "requireMultipleVarDecl": null,
+    "disallowDanglingUnderscores": null
+}

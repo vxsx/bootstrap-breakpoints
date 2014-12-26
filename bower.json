@@ -1,0 +1,16 @@
+{
+  "name": "bootstrap-breakpoints",
+  "version": "0.0.0",
+  "authors": [
+    "Vadim Sikora <vadim.sikora@gmail.com>"
+  ],
+  "license": "MIT",
+  "private": true,
+  "ignore": [
+    "**/.*",
+    "node_modules",
+    "bower_components",
+    "test",
+    "tests"
+  ]
+}
