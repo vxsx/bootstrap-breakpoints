@@ -30,14 +30,18 @@ var Breakpoint = (function () {
     };
 
     var _onResize = function () {
-        // we need to use innerWidth because of scrollbars
         var oldBreakpoint = _currentBreakpoint;
+        // we need to use innerWidth because of scrollbars
+        // this is ie9 +
+        // ie8 support would require to create extra element
         var viewport = _win[0].innerWidth;
         for (var breakpoint in _breakpoints) {
-            if (viewport > _breakpoints[breakpoint].min &&
-                viewport < _breakpoints[breakpoint].max) {
+            if (viewport >= _breakpoints[breakpoint].min &&
+                viewport <= _breakpoints[breakpoint].max) {
                 _currentBreakpoint = breakpoint;
-                _win.trigger('change:breakpoint', [_currentBreakpoint, oldBreakpoint]);
+                if (_currentBreakpoint !== oldBreakpoint) {
+                    _win.trigger('change:breakpoint', [_currentBreakpoint, oldBreakpoint]);
+                }
             }
         }
     };
@@ -60,19 +64,10 @@ var Breakpoint = (function () {
         return _currentBreakpoint;
     };
 
-    var higher = function (breakpoint) {
-        _validate(breakpoint);
-        throw new Error('Not implemented');
-    };
-
-    var lower = function (breakpoint) {
-        _validate(breakpoint);
-        throw new Error('Not implemented');
-    };
-
     var init = function (breakpoints) {
         _breakpoints = $.extend(_defaults, breakpoints);
-        // TODO do only once
+        //making sure that we don't have millions of handlers in case of multiple inits
+        destroy();
         _initWatch();
     };
 
@@ -84,8 +79,6 @@ var Breakpoint = (function () {
         init: init,
         destroy: destroy,
         is: is,
-        higher: higher,
-        lower: lower,
         current: current,
         getBreakpoints: getBreakpoints
     };

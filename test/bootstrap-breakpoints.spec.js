@@ -24,12 +24,10 @@ describe('Boostrap Breakpoints', function () {
 
     it('has defined public API', function () {
         expect(Object.keys(Breakpoint))
-            .toEqual(['init', 'destroy', 'is', 'higher', 'lower', 'current', 'getBreakpoints']);
+            .toEqual(['init', 'destroy', 'is', 'current', 'getBreakpoints']);
         expect(Breakpoint.init).toBeDefined();
         expect(Breakpoint.destroy).toBeDefined();
         expect(Breakpoint.is).toBeDefined();
-        expect(Breakpoint.higher).toBeDefined();
-        expect(Breakpoint.lower).toBeDefined();
         expect(Breakpoint.getBreakpoints).toBeDefined();
         expect(Breakpoint.current).toBeDefined();
     });
@@ -38,6 +36,7 @@ describe('Boostrap Breakpoints', function () {
         var spy = jasmine.createSpy('spy');
         $(window).on('change:breakpoint', spy);
         resizeWindowTo(800);
+        resizeWindowTo(820);
 
         expect(spy).toHaveBeenCalled();
         expect(spy).toHaveBeenCalledWith(jasmine.any(Object), 'sm', 'xs');
@@ -68,14 +67,6 @@ describe('Boostrap Breakpoints', function () {
             it('returns current breakpoint', function () {
                 expect(Breakpoint.current()).toEqual('xs');
             });
-        });
-
-        describe('.higher()', function () {
-            //
-        });
-
-        describe('.lower()', function () {
-            //
         });
     });
 });
