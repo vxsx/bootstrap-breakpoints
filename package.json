@@ -4,7 +4,7 @@
   "description": "Easy way to determine current bootstrap media query breakpoint",
   "main": "bootstrap-breakpoints.js",
   "scripts": {
-    "test": "gulp test"
+    "test": "karma run"
   },
   "keywords": [
     "bootstrap",
