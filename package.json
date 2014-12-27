@@ -4,7 +4,7 @@
   "description": "Easy way to determine current bootstrap media query breakpoint",
   "main": "src/bootstrap-breakpoints.js",
   "scripts": {
-    "test": "gulp && node_modules/karma/bin/karma run"
+    "test": "gulp && ./node_modules/karma/bin/karma start --single-run --browsers PhantomJS"
   },
   "keywords": [
     "bootstrap",
