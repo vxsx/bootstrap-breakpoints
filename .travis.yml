@@ -9,4 +9,4 @@ before_script:
 after_script:
   - codeclimate < coverage/**/lcov.info
 env:
-  - CODECLIMATE_REPO_TOKEN=74f1add5b7a084e4fcb0afc425b4de311de815788e43b4326a453a639e264150 
+  - CODECLIMATE_REPO_TOKEN=3da2fca425c3798e4fc8afe7a90e608207285ea2f4885fbefd99556ef8d683c3
