@@ -5,3 +5,6 @@ node_js:
 before_script:
   - npm install -g bower
   - bower install
+addons:
+    code_climate:
+        repo_token: 74f1add5b7a084e4fcb0afc425b4de311de815788e43b4326a453a639e264150
