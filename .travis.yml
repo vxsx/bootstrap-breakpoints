@@ -4,9 +4,9 @@ node_js:
   - "0.10"
 before_script:
   - npm install -g bower
+  - npm install -g codeclimate-test-reporter
   - bower install
 after_script:
   - codeclimate < coverage/**/lcov.info
-addons:
-    code_climate:
-        repo_token: 74f1add5b7a084e4fcb0afc425b4de311de815788e43b4326a453a639e264150
+env:
+  - CODECLIMATE_REPO_TOKEN=74f1add5b7a084e4fcb0afc425b4de311de815788e43b4326a453a639e264150 
