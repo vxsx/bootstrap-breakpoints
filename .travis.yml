@@ -5,6 +5,10 @@ node_js:
   - "0.11"
   - "0.10"
 #stupid things for node-sass 
+matrix:
+  fast_finish: true
+  allow_failures:
+    - node_js: "0.11"
 before_install:
   - sudo add-apt-repository -y ppa:ubuntu-toolchain-r/test;
   - sudo apt-get update;
@@ -21,4 +25,3 @@ after_script:
   - codeclimate < coverage/**/lcov.info
 env:
   - CODECLIMATE_REPO_TOKEN=3da2fca425c3798e4fc8afe7a90e608207285ea2f4885fbefd99556ef8d683c3
-  - SKIP_SASS_BINARY_DOWNLOAD_FOR_CI=true
