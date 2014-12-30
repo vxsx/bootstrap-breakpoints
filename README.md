@@ -77,7 +77,8 @@ Removes resize watcher.
 
 ## Demo
 
-TODO
+[http://vxsx.github.io/bootstrap-breakpoints/](http://vxsx.github.io/bootstrap-breakpoints/)
+
 
 ## Contributing
 
