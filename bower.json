@@ -1,17 +1,24 @@
 {
   "name": "bootstrap-breakpoints",
-  "version": "0.0.0",
+  "version": "0.1.0",
   "authors": [
     "Vadim Sikora <vadim.sikora@gmail.com>"
   ],
+  "repository": {
+    "type": "git",
+    "url": "https://github.com/vxsx/bootstrap-breakpoints.git"
+  },
+  "main": "src/bootstrap-breakpoints.js",
   "license": "MIT",
-  "private": true,
   "ignore": [
     "**/.*",
     "node_modules",
     "bower_components",
     "test",
-    "tests"
+    "tests",
+    "scss/*",
+    "css/*",
+    "karma.conf.js"
   ],
   "dependencies": {
     "jquery": "~2.1.3"

@@ -1,8 +1,12 @@
 {
   "name": "bootstrap-breakpoints",
-  "version": "0.0.0",
+  "version": "0.1.0",
   "description": "Easy way to determine current bootstrap media query breakpoint",
   "main": "src/bootstrap-breakpoints.js",
+  "repository": {
+    "type": "git",
+    "url": "https://github.com/vxsx/bootstrap-breakpoints.git"
+  },
   "scripts": {
     "test": "gulp && ./node_modules/karma/bin/karma start --single-run --browsers PhantomJS"
   },
@@ -19,6 +23,8 @@
     "gulp-jscs": "^1.3.1",
     "gulp-jshint": "^1.9.0",
     "gulp-util": "^3.0.1",
+    "gulp-autoprefixer": "^2.0.0",
+    "gulp-sass": "^1.2.4",
     "jasmine-core": "^2.1.3",
     "karma": "^0.12.28",
     "karma-chrome-launcher": "^0.1.7",
