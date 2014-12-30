@@ -40,7 +40,7 @@ var Breakpoint = (function () {
                 viewport <= _breakpoints[breakpoint].max) {
                 _currentBreakpoint = breakpoint;
                 if (_currentBreakpoint !== oldBreakpoint) {
-                    _win.trigger('change:breakpoint', [_currentBreakpoint, oldBreakpoint]);
+                    _win.trigger('change:breakpoint', [_currentBreakpoint, oldBreakpoint || 'xs']);
                 }
             }
         }
@@ -65,7 +65,7 @@ var Breakpoint = (function () {
     };
 
     var init = function (breakpoints) {
-        _breakpoints = $.extend(_defaults, breakpoints);
+        _breakpoints = $.extend(true, _defaults, breakpoints);
         //making sure that we don't have millions of handlers in case of multiple inits
         destroy();
         _initWatch();
@@ -73,6 +73,7 @@ var Breakpoint = (function () {
 
     var destroy = function () {
         _win.off('resize.bootstrap.breakpoints');
+        _currentBreakpoint = undefined;
     };
 
     return {
