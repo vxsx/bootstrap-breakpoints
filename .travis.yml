@@ -1,4 +1,6 @@
 language: node_js
+compiler:
+  - gcc
 node_js:
   - "0.11"
   - "0.10"
@@ -19,3 +21,4 @@ after_script:
   - codeclimate < coverage/**/lcov.info
 env:
   - CODECLIMATE_REPO_TOKEN=3da2fca425c3798e4fc8afe7a90e608207285ea2f4885fbefd99556ef8d683c3
+  - SKIP_SASS_BINARY_DOWNLOAD_FOR_CI=true
