@@ -1,0 +1,130 @@
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+html {
+    font-family: 'Helvetica Neue', Helvetica, Arial, sans-serif;
+    background: linear-gradient(90deg, #606c88 10%, #3f4c6b 90%);
+    overflow: hidden;
+}
+
+html, body {
+    width: 100%;
+    height: 100%;
+    display: flex;
+}
+
+.container {
+    position: relative;
+    perspective: 1000px;
+    width: 50vmin;
+    height: 50vmin;
+    margin: auto;
+}
+.help-text {
+    position: absolute;
+    left: 0;
+    right: 0;
+    bottom: 0;
+    line-height: 50px;
+    height: 50px;
+    font-size: 18px;
+    text-align: center;
+    color: white;
+}
+.cube {
+    position: absolute;
+    width: 100%;
+    height: 100%;
+    transform-style: preserve-3d;
+    position: relative;
+    transition: transform 1s;
+}
+.cube_show_xs {
+    transform: translateZ(-25vmin);
+}
+.cube_show_sm {
+    transform: translateZ(-25vmin) rotateY(-90deg);
+}
+.cube_show_md {
+    transform: translateZ(-25vmin) rotateY(-180deg);
+}
+.cube_show_lg {
+    transform: translateZ(-25vmin) rotateY(-270deg);
+}
+
+.cube__side {
+    position: absolute;
+    text-align: center;
+    color: white;
+    background-image: linear-gradient(to bottom, rgba(0, 0, 0, 0.6), rgba(0, 0, 0, 0.3));
+    font-weight: bold;
+    font-size: 10vmin;
+    width: 100%;
+    height: 100%;
+    line-height: 50vmin;
+    backface-visibility: hidden;
+}
+
+.cube__side_top {
+    transform: translateY(-25vmin) rotateX(90deg);
+}
+
+.cube__side_front {
+    transform: translateZ(25vmin);
+}
+.cube__side_right {
+    transform: translateX(25vmin) rotateY(90deg);
+}
+
+.cube__side_back {
+    transform: translateZ(-25vmin) rotateY(-180deg);
+}
+.cube__side_left {
+    transform: translateX(-25vmin) rotateY(-90deg);
+}
+.cube__side_bottom {
+    transform: translateY(25vmin) rotateX(-90deg);
+}
+
+.github { 
+    color: white; 
+    right: -65px;
+    height: 30px;
+    top: 40px;
+    position: absolute;
+    text-decoration: none;
+    width: 250px;
+    opacity: 1;
+    transform: rotate(45deg); 
+
+    span { 
+        background: #000;
+        font-size: 14px;
+        left: 0;
+        position: absolute;
+        text-align: center;
+        width: 250px;
+        box-shadow: rgba(0, 0, 0, 0.2) 1px 1px 10px; 
+        padding: 5px 0;
+        opacity: 1;
+        transition: opacity linear 0.2s;
+        backface-visibility: hidden;
+        transition: all linear 0.2s;
+        &:last-child {
+            background: #65BDFB;
+            transform: rotateX(180deg);
+            opacity: 0; 
+        }
+    }
+    &:hover span:first-child {
+        opacity: 0;
+        transform: rotateX(180deg);
+    }
+    &:hover span:last-child {
+        opacity: 1;
+        transform: rotateX(360deg);
+    }
+}

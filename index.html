@@ -1,0 +1,41 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Bootstrap Breakpoints</title>
+    <script src="bower_components/jquery/dist/jquery.js"></script>
+    <script src="src/bootstrap-breakpoints.js"></script>
+    <link rel="stylesheet" href="css/style.css" media="all">
+</head>
+<body>
+    <div class="container">
+        <div class="cube cube_show_xs">
+            <div class="cube__side cube__side_front">XS</div>
+            <div class="cube__side cube__side_back">MD</div>
+            <div class="cube__side cube__side_left">LG</div>
+            <div class="cube__side cube__side_right">SM</div>
+            <div class="cube__side cube__side_top"></div>
+            <div class="cube__side cube__side_bottom"></div>
+        </div>
+    </div>
+    <p class="help-text">Resize your browser</p>
+    <a class="github" href="https://github.com/vxsx/bootstrap-breakpoints">
+        <span>Fork me on GitHub</span>
+        <span>No, seriously</span>
+    </a>
+</body>
+<script type="text/javascript">
+    $(function () {
+        var cube = $('.cube');
+        $(window).on('change:breakpoint', function (e, current, previous) {
+            cube.removeClass('cube_show_' + previous)
+            cube.addClass('cube_show_' + current);
+            console.groupCollapsed('Breakpoint changed');
+            console.log('Current breakpoint is ' + current);
+            console.log('Previous breakpoint was ' + previous);
+            console.groupEnd();
+        });
+        Breakpoint.init();
+    });
+</script>
+</html>
