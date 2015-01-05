@@ -98,6 +98,31 @@ html, body {
   -webkit-transform: translateY(25vmin) rotateX(-90deg);
           transform: translateY(25vmin) rotateX(-90deg); }
 
+.stats {
+  position: absolute;
+  bottom: 50px;
+  left: 0;
+  width: 100%;
+  text-align: center;
+  white-space: nowrap;
+  color: white; }
+
+.stats__col {
+  display: inline-block;
+  width: 70px; }
+
+.stats__width {
+  font-size: 110%; }
+
+.stats__boundary {
+  font-size: 80%; }
+
+.stats__boundary_min {
+  text-align: right; }
+
+.stats__boundary_max {
+  text-align: left; }
+
 .github {
   color: white;
   right: -65px;

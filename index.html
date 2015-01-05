@@ -10,7 +10,7 @@
 </head>
 <body>
     <div class="container">
-        <div class="cube cube_show_xs">
+        <div class="cube cube_show_xs js-cube">
             <div class="cube__side cube__side_front">XS</div>
             <div class="cube__side cube__side_back">MD</div>
             <div class="cube__side cube__side_left">LG</div>
@@ -19,6 +19,11 @@
             <div class="cube__side cube__side_bottom"></div>
         </div>
     </div>
+    <p class="stats">
+        <span class="js-min stats__col stats__boundary stats__boundary_min">0px</span>
+        <span class="js-current-width stats__col stats__width">400px</span>
+        <span class="js-max stats__col stats__boundary stats__boundary_max">767px</span>
+    </p>
     <p class="help-text">Resize your browser</p>
     <a class="github" href="https://github.com/vxsx/bootstrap-breakpoints">
         <span>Fork me on GitHub</span>
@@ -27,15 +32,29 @@
 </body>
 <script type="text/javascript">
     $(function () {
-        var cube = $('.cube');
-        $(window).on('change:breakpoint', function (e, current, previous) {
+        var cube = $('.js-cube');
+        var min = $('.js-min');
+        var max = $('.js-max');
+        var current = $('.js-current-width');
+        var win = $(window);
+
+        win.on('change:breakpoint', function (e, current, previous) {
+            var currentBreakpoints = Breakpoint.getBreakpoints()[current];
+
             cube.removeClass('cube_show_' + previous)
             cube.addClass('cube_show_' + current);
+
+            min.text(currentBreakpoints.min + 'px');
+            max.text(currentBreakpoints.max !== Infinity ? currentBreakpoints.max + 'px' : currentBreakpoints.max);
+
             console.groupCollapsed('Breakpoint changed');
             console.log('Current breakpoint is ' + current);
             console.log('Previous breakpoint was ' + previous);
             console.groupEnd();
-        });
+        }).on('resize', function () {
+            current.text(window.innerWidth + 'px');
+        }).trigger('resize');
+
         Breakpoint.init();
     });
 </script>
