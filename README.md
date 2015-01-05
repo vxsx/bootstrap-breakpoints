@@ -41,7 +41,7 @@ Breakpoint.init({
     },
     sm: {
         min: 500,
-        max: 1000,
+        max: 1000
     }
     //etc
 });
