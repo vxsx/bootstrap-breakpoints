@@ -51,7 +51,7 @@ Breakpoint.init({
 
 On init script registers an event handler on window resize where it just checks window.width 
 and if correct breakpoint is found it sets the value internally as well as triggering 'change:breakpoint' event
-on window.  You may want to throttle the event handler, but it's not yet possible without modifying source code.
+on window.  You may want to throttle the event handler, but it's not yet possible without modifying source code. Also, keep in mind that it is assumed that breakpoints you provide are mutually exclusive, otherwise detected current breakpoint may be not the one you expect.
 
 ## API
 
