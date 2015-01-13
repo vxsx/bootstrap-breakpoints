@@ -1,6 +1,14 @@
 {
   "name": "bootstrap-breakpoints",
   "version": "0.1.0",
+  "description": "Tiny script to enable easier checks for current responsive breakpoint"
+  "keywords": [
+    "bootstrap",
+    "breakpoints",
+    "reponsive",
+    "media",
+    "query"
+  ],
   "authors": [
     "Vadim Sikora <vadim.sikora@gmail.com>"
   ],
