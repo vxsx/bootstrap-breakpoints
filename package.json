@@ -1,6 +1,6 @@
 {
   "name": "bootstrap-breakpoints",
-  "version": "0.1.0",
+  "version": "1.0.0",
   "description": "Easy way to determine current bootstrap media query breakpoint",
   "main": "src/bootstrap-breakpoints.js",
   "repository": {
@@ -32,5 +32,8 @@
     "karma-coverage": "^0.2.7",
     "karma-jasmine": "^0.3.3",
     "karma-phantomjs-launcher": "^0.1.4"
+  },
+  "dependencies": {
+    "jquery": "^3.1.1"
   }
 }
