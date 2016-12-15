@@ -1,6 +1,15 @@
-/* global window, $ */
-var Breakpoint = (function () {
-
+(function (root, factory) {
+    if (typeof define === 'function' && define.amd) {
+        // AMD
+        define(['jquery'], factory);
+    } else if (typeof exports === 'object') {
+        // Node, CommonJS-like
+        module.exports = factory(require('jquery'));
+    } else {
+        // Browser globals (root is window)
+        root.Breakpoint = factory(root.jQuery);
+    }
+}(this, function ($) {
     var _win = $(window);
     var _breakpoints;
     var _currentBreakpoint;
@@ -83,4 +92,4 @@ var Breakpoint = (function () {
         current: current,
         getBreakpoints: getBreakpoints
     };
-}());
+}));
